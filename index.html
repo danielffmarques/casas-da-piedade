@@ -574,13 +574,9 @@
       text-decoration: none;
       opacity: 0;
       animation: heroScrollFadeUp 1.2s 1s ease forwards;
-      cursor: pointer;
-      transition: color 0.35s ease, transform 0.35s ease;
-    }
-
-    .hero-scroll:hover {
-      transform: translateY(3px);
-      color: var(--branco-puro);
+      cursor: default;
+      pointer-events: none;
+      user-select: none;
     }
 
     .hero-scroll span {
@@ -1412,13 +1408,10 @@
       margin: 2.2rem auto 0;
       gap: 0.75rem;
       text-decoration: none;
-      cursor: pointer;
+      cursor: default;
+      pointer-events: none;
+      user-select: none;
       width: max-content;
-      transition: transform 0.35s ease;
-    }
-
-    .intercalar-scroll-guide:hover {
-      transform: translateY(4px);
     }
 
     .intercalar-mouse {
@@ -1430,12 +1423,6 @@
       display: flex;
       justify-content: center;
       padding-top: 6px;
-      transition: border-color 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .intercalar-scroll-guide:hover .intercalar-mouse {
-      border-color: var(--branco-puro);
-      box-shadow: 0 0 12px rgba(246, 242, 233, 0.4);
     }
 
     .intercalar-mouse-wheel {
@@ -2895,11 +2882,11 @@
       </div>
     </div>
 
-    <!-- Indicação subtil de scroll -->
-    <a href="#narrativa-carrossel" class="hero-scroll" aria-label="Descer para a secção seguinte">
+    <!-- Indicação subtil de scroll (não clicável) -->
+    <div class="hero-scroll" aria-hidden="true">
       <span data-pt="Explorar" data-en="Explore">Explorar</span>
       <div class="hero-scroll-line"></div>
-    </a>
+    </div>
   </header>
 
 
@@ -3306,13 +3293,13 @@
         A Quinta da Brôa é uma das mais veneradas casas agrícolas e coudelarias de Portugal. Viver as Casas da Piedade é partilhar deste horizonte vivo, onde a terra ainda comanda o ritmo dos dias.
       </p>
 
-      <!-- Scroll Indicator puro que convida a continuar o scroll (sem texto) -->
-      <a href="#o-que-fazer" class="intercalar-scroll-guide" aria-label="Continuar a descer">
-        <div class="intercalar-mouse" aria-hidden="true">
+      <!-- Scroll Indicator puro que convida a continuar o scroll (não clicável) -->
+      <div class="intercalar-scroll-guide" aria-hidden="true">
+        <div class="intercalar-mouse">
           <div class="intercalar-mouse-wheel"></div>
         </div>
-        <div class="intercalar-scroll-line" aria-hidden="true"></div>
-      </a>
+        <div class="intercalar-scroll-line"></div>
+      </div>
     </div>
   </section>
 
