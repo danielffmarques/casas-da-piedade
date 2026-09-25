@@ -1624,7 +1624,7 @@
       padding: 2.2rem 2.4rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       border-left: 1px solid var(--borda-fina);
       background-color: var(--branco-quente);
       height: 100%;
@@ -3617,8 +3617,6 @@
               O ponto de partida da sua descoberta. Desfrute da piscina exterior sazonal, dos jardins privativos e da tranquilidade das casas caiadas antes de partir à exploração do Ribatejo.
             </p>
           </div>
-
-          <a href="#reservar" class="btn btn-primary" id="det-link" data-pt="Reservar Estadia" data-en="Book Your Stay">Reservar Estadia</a>
         </div>
 
       </div>
@@ -4334,8 +4332,10 @@
       document.getElementById('det-texto').textContent = idiomaAtual === 'pt' ? item.textoPt : item.textoEn;
       
       const linkBtn = document.getElementById('det-link');
-      linkBtn.textContent = idiomaAtual === 'pt' ? item.linkTextoPt : item.linkTextoEn;
-      linkBtn.href = item.linkHref;
+      if (linkBtn) {
+        linkBtn.textContent = idiomaAtual === 'pt' ? item.linkTextoPt : item.linkTextoEn;
+        linkBtn.href = item.linkHref;
+      }
     }
 
     function filtrarMapa(categoria) {
