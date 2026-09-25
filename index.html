@@ -1551,11 +1551,13 @@
       border-radius: 2px;
       overflow: hidden;
       box-shadow: var(--sombra-subtil);
+      min-height: 560px;
     }
 
     .mapa-visual {
       position: relative;
-      min-height: 520px;
+      min-height: 560px;
+      height: 100%;
       background-color: #E3DCCE;
       overflow: hidden;
     }
@@ -1630,12 +1632,14 @@
     }
 
     .mapa-details-panel {
-      padding: 2.8rem 2.4rem;
+      padding: 2.5rem 2.2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       border-left: 1px solid var(--borda-fina);
       background-color: var(--branco-quente);
+      height: 100%;
+      box-sizing: border-box;
     }
 
     .detail-tag {
@@ -1653,8 +1657,11 @@
       font-size: 1.85rem;
       font-weight: 400;
       color: var(--verde-profundo);
-      line-height: 1.25;
-      margin-bottom: 1rem;
+      line-height: 1.22;
+      margin-bottom: 0.8rem;
+      min-height: 2.45em;
+      display: flex;
+      align-items: flex-start;
     }
 
     .detail-distance {
@@ -1664,22 +1671,29 @@
       font-size: 0.75rem;
       color: var(--cinza-suave);
       font-weight: 500;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.2rem;
     }
 
     .detail-body {
       font-size: 0.88rem;
-      line-height: 1.85;
+      line-height: 1.8;
       color: var(--cinza-suave);
-      margin-bottom: 2rem;
+      margin-bottom: 1.6rem;
+      min-height: 4.8em;
     }
 
     .detail-photo-mini {
-      border-radius: 2px;
+      width: 100%;
+      height: 190px !important;
+      min-height: 190px !important;
+      max-height: 190px !important;
       aspect-ratio: 16/9;
       object-fit: cover;
-      margin-bottom: 1.8rem;
+      object-position: center;
+      border-radius: 2px;
+      margin-bottom: 1.4rem;
       box-shadow: var(--sombra-subtil);
+      display: block;
     }
 
     /* =========================================================
@@ -2585,7 +2599,11 @@
         margin-bottom: 1.5rem;
       }
       .detail-photo-mini {
-        max-height: 180px;
+        width: 100%;
+        height: 180px !important;
+        min-height: 180px !important;
+        max-height: 180px !important;
+        object-fit: cover;
         margin-bottom: 1.4rem;
       }
       #det-link {
