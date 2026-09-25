@@ -1403,57 +1403,83 @@
       text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
     }
 
-    /* GUIA DE SCROLL EDITORIAL: EXPLORAR COM LINHA VERTICAL (CONFORME REFERÊNCIA) */
+    /* GUIA DE SCROLL PURO (SEM TEXTO) QUE CONVIDA A CONTINUAR O SCROLL */
     .intercalar-scroll-guide {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: 1.5rem auto 0;
-      text-align: center;
-      width: max-content;
-      gap: 0.85rem;
-      color: var(--branco-quente);
+      margin: 2.2rem auto 0;
+      gap: 0.75rem;
       text-decoration: none;
       cursor: pointer;
-      transition: color 0.35s ease, transform 0.35s ease;
+      width: max-content;
+      transition: transform 0.35s ease;
     }
 
     .intercalar-scroll-guide:hover {
-      transform: translateY(3px);
+      transform: translateY(4px);
     }
 
-    .intercalar-scroll-text {
-      font-family: var(--font-sans);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.28em;
-      margin-right: -0.28em; /* Cancela trailing letter-spacing para simetria visual absoluta */
-      text-transform: uppercase;
-      text-align: center;
-      display: block;
-      color: rgba(246, 242, 233, 0.88);
-      transition: color 0.35s ease, letter-spacing 0.35s ease;
+    .intercalar-mouse {
+      width: 22px;
+      height: 36px;
+      border: 1.5px solid rgba(246, 242, 233, 0.7);
+      border-radius: 12px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding-top: 6px;
+      transition: border-color 0.35s ease, box-shadow 0.35s ease;
     }
 
-    .intercalar-scroll-guide:hover .intercalar-scroll-text {
-      color: var(--branco-puro);
-      letter-spacing: 0.32em;
-      margin-right: -0.32em;
+    .intercalar-scroll-guide:hover .intercalar-mouse {
+      border-color: var(--branco-puro);
+      box-shadow: 0 0 12px rgba(246, 242, 233, 0.4);
+    }
+
+    .intercalar-mouse-wheel {
+      width: 3px;
+      height: 6px;
+      background-color: var(--branco-quente);
+      border-radius: 2px;
+      animation: mouseWheel 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+
+    @keyframes mouseWheel {
+      0% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(14px);
+      }
     }
 
     .intercalar-scroll-line {
       width: 1px;
-      height: 36px;
+      height: 38px;
       display: block;
       margin-inline: auto;
-      background: linear-gradient(180deg, rgba(246, 242, 233, 0.85) 0%, rgba(246, 242, 233, 0.15) 100%);
-      transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
+      background: linear-gradient(180deg, rgba(246, 242, 233, 0.85) 0%, transparent 100%);
+      animation: linePulse 2s ease-in-out infinite;
     }
 
-    .intercalar-scroll-guide:hover .intercalar-scroll-line {
-      height: 48px;
-      background: linear-gradient(180deg, var(--branco-puro) 0%, rgba(246, 242, 233, 0.4) 100%);
+    @keyframes linePulse {
+      0%, 100% {
+        opacity: 0.35;
+        transform: scaleY(0.65);
+        transform-origin: top;
+      }
+      50% {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+      }
     }
 
     /* =========================================================
@@ -3270,10 +3296,12 @@
         A Quinta da Brôa é uma das mais veneradas casas agrícolas e coudelarias de Portugal. Viver as Casas da Piedade é partilhar deste horizonte vivo, onde a terra ainda comanda o ritmo dos dias.
       </p>
 
-      <!-- GUIA DE SCROLL EDITORIAL: EXPLORAR COM LINHA VERTICAL (CONFORME REFERÊNCIA) -->
-      <a href="#o-que-fazer" class="intercalar-scroll-guide" aria-label="Explorar o que fazer">
-        <span class="intercalar-scroll-text" data-pt="EXPLORAR" data-en="EXPLORE">EXPLORAR</span>
-        <span class="intercalar-scroll-line" aria-hidden="true"></span>
+      <!-- Scroll Indicator puro que convida a continuar o scroll (sem texto) -->
+      <a href="#o-que-fazer" class="intercalar-scroll-guide" aria-label="Continuar a descer">
+        <div class="intercalar-mouse" aria-hidden="true">
+          <div class="intercalar-mouse-wheel"></div>
+        </div>
+        <div class="intercalar-scroll-line" aria-hidden="true"></div>
       </a>
     </div>
   </section>
