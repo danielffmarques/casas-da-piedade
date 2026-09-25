@@ -2057,16 +2057,292 @@
     .delay-1 { transition-delay: 0.15s; }
     .delay-2 { transition-delay: 0.3s; }
 
+    /* =========================================================
+       COMPONENTES ADICIONAIS RESPONSIVOS (MOBILE-FIRST WIDGETS)
+       ========================================================= */
+    .narrativa-mobile-tabs,
+    .narrativa-mobile-flow,
+    .casas-mobile-tabs,
+    .mapa-quick-selector,
+    .mobile-drawer-close {
+      display: none;
+    }
+
+    /* Comutador Narrativa Mobile */
+    .narrativa-mobile-tabs {
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    .narrativa-m-tab {
+      flex: 1;
+      max-width: 220px;
+      padding: 0.75rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cinza-suave);
+      background-color: var(--areia-suave);
+      border: 1px solid var(--borda-fina);
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all var(--trans-suave);
+      text-align: center;
+    }
+
+    .narrativa-m-tab.active {
+      background-color: var(--verde-profundo);
+      color: var(--branco-puro);
+      border-color: var(--verde-profundo);
+      box-shadow: 0 4px 14px rgba(48, 70, 60, 0.22);
+    }
+
+    .narrativa-mobile-flow {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .narrativa-mobile-flow .m-flow-btn {
+      width: 100%;
+      max-width: 320px;
+      padding: 0.85rem 1.4rem;
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+    }
+
+    /* Comutador Tipologias Casas Mobile */
+    .casas-mobile-tabs {
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      width: 100%;
+      overflow-x: auto;
+      padding: 0.3rem 0;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .casas-mobile-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cm-tab {
+      padding: 0.7rem 1.2rem;
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cinza-suave);
+      background-color: var(--branco-puro);
+      border: 1px solid var(--borda-fina);
+      border-radius: 30px;
+      white-space: nowrap;
+      transition: all var(--trans-suave);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .cm-tab.is-active {
+      background-color: var(--verde-profundo);
+      color: var(--branco-puro);
+      border-color: var(--verde-profundo);
+      box-shadow: 0 4px 14px rgba(48, 70, 60, 0.22);
+    }
+
+    /* Seletor Rápido de Atividades do Mapa */
+    .mapa-quick-selector {
+      gap: 0.55rem;
+      overflow-x: auto;
+      padding: 0.4rem 0 1.2rem;
+      margin-bottom: 1.2rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .mapa-quick-selector::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mq-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.15rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--verde-profundo);
+      background-color: var(--branco-puro);
+      border: 1px solid var(--borda-fina);
+      border-radius: 30px;
+      white-space: nowrap;
+      transition: all var(--trans-suave);
+      cursor: pointer;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .mq-pill .mq-emoji {
+      font-size: 0.95rem;
+    }
+
+    .mq-pill.active {
+      background-color: var(--verde-profundo);
+      color: var(--branco-puro);
+      border-color: var(--verde-profundo);
+      box-shadow: 0 4px 14px rgba(48, 70, 60, 0.25);
+    }
+
+    /* Botão Direto para o Google Maps */
+    .loc-maps-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      padding: 0.75rem 1.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--verde-profundo);
+      background-color: var(--branco-puro);
+      border: 1px solid var(--verde-profundo);
+      border-radius: 2px;
+      transition: all var(--trans-suave);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .loc-maps-link:hover {
+      background-color: var(--verde-profundo);
+      color: var(--branco-puro);
+    }
+
+    /* Animação do Botão Hamburguer para "X" */
+    .mobile-toggle.is-active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+      background-color: var(--branco-quente) !important;
+    }
+
+    .mobile-toggle.is-active span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .mobile-toggle.is-active span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+      background-color: var(--branco-quente) !important;
+    }
+
+    .mobile-drawer-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--branco-quente);
+      font-size: 1.6rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .mobile-drawer-close:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    /* =========================================================
+       MEDIA QUERIES RESPONSIVAS
+       ========================================================= */
+
+    /* 1. TABLETS LANDSCAPE & ECRÃS MÉDIOS (<= 1024px) */
     @media (max-width: 1024px) {
-      .narrativa-slide.active { gap: 4rem; }
-      .highlights-grid { grid-template-columns: repeat(2, 1fr); }
-      .reservar-split { grid-template-columns: 1fr; gap: 4rem; }
+      .container { width: min(94%, 1240px); }
+      .narrativa-stage-wrap { gap: 2rem; }
+      .narrativa-slide.active { gap: 3.5rem; }
+      .highlights-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+      .reservar-split { grid-template-columns: 1fr; gap: 3.5rem; }
       .mapa-interativo-container { grid-template-columns: 1fr; }
       .mapa-details-panel { border-left: none; border-top: 1px solid var(--borda-fina); }
       .footer-top-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .loc-grid { gap: 3.5rem; }
     }
 
+    /* 2. TABLETS PORTRAIT & TELAS COMPACTAS (<= 960px) */
     @media (max-width: 960px) {
+      #narrativa-carrossel {
+        padding: 3rem 0;
+      }
+      .narrativa-mobile-tabs {
+        display: flex;
+      }
+      .narrativa-mobile-flow {
+        display: flex;
+      }
+      .narrativa-stage-wrap {
+        display: block;
+        width: 100%;
+      }
+      .carrossel-slides-container {
+        display: block;
+        min-height: auto;
+      }
+      .narrativa-lateral-rail {
+        display: none !important;
+      }
+      .narrativa-slide {
+        display: none !important;
+        grid-area: auto;
+        min-height: auto;
+        transform: none !important;
+        opacity: 0;
+      }
+      .narrativa-slide.active {
+        display: flex !important;
+        flex-direction: column;
+        gap: 2rem;
+        opacity: 1;
+        visibility: visible;
+      }
+      .slide-media {
+        margin-top: 0;
+        width: 100%;
+      }
+      .slide-img-main {
+        aspect-ratio: 16/10;
+        max-height: 320px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+      .slide-img-float {
+        display: none;
+      }
+      .slide-text h2 {
+        font-size: clamp(1.8rem, 5.2vw, 2.6rem);
+      }
+
+      /* Acordeão de Casas reorganizado para Mobile */
+      #as-casas {
+        padding: 3rem 0;
+      }
+      .casas-mobile-tabs {
+        display: flex;
+      }
       .casas-horizontal-accordion {
         flex-direction: column;
         height: auto;
@@ -2074,8 +2350,10 @@
       }
       .casa-acc-panel {
         height: auto;
-        min-height: 90px;
+        min-height: 76px;
         flex: none !important;
+        border-radius: 4px;
+        overflow: hidden;
       }
       .casa-acc-panel.is-active,
       .casa-acc-panel:hover {
@@ -2084,8 +2362,9 @@
       .acc-collapsed-view {
         position: relative;
         flex-direction: row;
-        height: 90px;
-        padding: 1.2rem 1.8rem;
+        height: 76px;
+        padding: 1rem 1.4rem;
+        align-items: center;
       }
       .acc-col-inner {
         flex-direction: row;
@@ -2100,6 +2379,9 @@
         gap: 0.8rem;
         width: auto;
       }
+      .acc-col-num {
+        font-size: 1.8rem;
+      }
       .acc-col-bottom {
         display: flex;
         flex-direction: column;
@@ -2109,7 +2391,11 @@
         text-align: right;
       }
       .acc-col-title {
-        font-size: 1.05rem;
+        font-size: 1rem;
+      }
+      .acc-col-footer {
+        gap: 0.8rem;
+        font-size: 0.72rem;
       }
       .acc-expanded-view {
         position: relative;
@@ -2140,100 +2426,418 @@
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
-        padding: 2.2rem 1.6rem;
+        padding: 2rem 1.5rem;
       }
       .acc-info-side > * {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
       }
-      .narrativa-stage-wrap {
+      .acc-btn-cta {
+        width: 100%;
+        text-align: center;
+        min-height: 48px;
         display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
-        width: 100%;
+        justify-content: center;
       }
-      .carrossel-slides-container {
-        display: block;
-        min-height: auto;
+
+      /* Secção O Que Fazer */
+      #o-que-fazer {
+        padding: 3rem 0;
       }
-      .narrativa-slide {
-        display: none !important;
-        grid-area: auto;
-        min-height: auto;
-        transform: none !important;
-        opacity: 0;
-      }
-      .narrativa-slide.active {
-        display: grid !important;
+      .fazer-intro-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
-        opacity: 1;
-        visibility: visible;
+        gap: 1.4rem;
+        margin-bottom: 2rem;
       }
-      .narrativa-lateral-rail {
-        flex: none;
-        width: 100%;
-        display: none !important;
-        transform: none !important;
+      .mapa-quick-selector {
+        display: flex;
       }
-      .narrativa-lateral-rail.active {
-        display: flex !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
+      .mapa-visual {
+        height: 320px;
+        min-height: 280px;
       }
-      .narrativa-lateral-rail.rail-right {
-        border: none;
-        padding-left: 0;
-        padding-top: 1rem;
-        order: 2;
-      }
-      .narrativa-lateral-rail.rail-left {
-        border: none;
-        padding-right: 0;
-        padding-bottom: 1rem;
-        order: -1;
-      }
-      .narrativa-lateral-btn {
-        flex-direction: row;
-        height: auto !important;
-        min-height: auto;
-        padding: 0.8rem 0;
-        justify-content: space-between;
-        gap: 1rem;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-      }
-      .slide-media {
-        margin-top: 0;
-      }
-      .lateral-nav-letters {
-        writing-mode: horizontal-tb;
-      }
-      .lateral-nav-arrow-icon {
-        transform: none;
-      }
-      .narrativa-lateral-rail.rail-right .narrativa-lateral-btn:hover .lateral-nav-arrow-icon {
-        transform: translateX(4px);
-      }
-      .narrativa-lateral-rail.rail-left .narrativa-lateral-btn:hover .lateral-nav-arrow-icon {
-        transform: translateX(-4px);
+      .mapa-details-panel {
+        padding: 2rem 1.6rem;
       }
     }
 
+    /* 3. SMARTPHONES & ECRÃS PEQUENOS (<= 768px) */
     @media (max-width: 768px) {
+      html {
+        font-size: 15px;
+      }
+
+      body {
+        -webkit-text-size-adjust: 100%;
+      }
+
+      #navbar {
+        padding: 0.85rem 0;
+      }
+      #navbar.scrolled {
+        padding: 0.65rem 0;
+      }
+
       .nav-menu { display: none; }
       .mobile-toggle { display: flex; }
-      .narrativa-slide.active { grid-template-columns: 1fr; gap: 3.5rem; }
-      .slide-img-float { display: none; }
-      .highlights-grid { grid-template-columns: 1fr; }
-      .loc-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .booking-card { padding: 2.2rem 1.6rem; }
-      .form-row-2 { grid-template-columns: 1fr; }
-      .footer-top-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+      .mobile-drawer-close { display: flex; }
+
+      .brand-logo-img {
+        width: 36px;
+        height: 36px;
+      }
+      .brand-title {
+        font-size: 1.1rem;
+      }
+      .brand-subtitle {
+        font-size: 0.52rem;
+      }
+
+      /* Hero Mobile */
+      #hero {
+        height: 100svh;
+        min-height: 540px;
+        max-height: 860px;
+        padding: 0;
+      }
+      .hero-content {
+        padding: 4.8rem 1.2rem 2.8rem;
+      }
+      .hero-headline {
+        font-size: clamp(2rem, 7.5vw, 2.9rem);
+        margin-bottom: 1.1rem;
+      }
+      .hero-narrative {
+        font-size: 0.92rem;
+        line-height: 1.68;
+        max-width: 500px;
+        margin-bottom: 2rem;
+      }
+      .hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 300px;
+        margin-inline: auto;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 0.85rem 1rem;
+        font-size: 0.72rem;
+      }
+      .hero-scroll {
+        bottom: max(1.2rem, env(safe-area-inset-bottom));
+      }
+
+      /* Highlights Mobile: Grade 2x2 elegante em vez de lista vertical longa */
+      #highlights-strip {
+        padding: 1.8rem 0;
+      }
+      .highlights-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+      .hl-item {
+        padding: 0.85rem 0.8rem;
+        border-left: 1px solid rgba(246, 242, 233, 0.14);
+      }
+      .hl-num {
+        font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+      }
+      .hl-title {
+        font-size: 0.72rem;
+        margin-bottom: 0.2rem;
+      }
+      .hl-desc {
+        font-size: 0.68rem;
+        line-height: 1.45;
+      }
+
+      /* Narrativa Slide Mobile */
+      .slide-img-main {
+        aspect-ratio: 16/10;
+        max-height: 250px;
+      }
+      .slide-lead {
+        font-size: 0.94rem;
+        line-height: 1.7;
+      }
+      .slide-desc {
+        font-size: 0.88rem;
+        line-height: 1.75;
+      }
+      .slide-quote {
+        margin: 1.3rem 0;
+        padding: 1rem 1.2rem;
+      }
+      .slide-quote p {
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+      .slide-features {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem 0.9rem;
+      }
+      .slide-feat-item {
+        font-size: 0.78rem;
+      }
+      .st-row {
+        grid-template-columns: 68px 1fr;
+        gap: 0.8rem;
+        padding-bottom: 0.65rem;
+      }
+      .st-date {
+        font-size: 1.15rem;
+      }
+      .st-text {
+        font-size: 0.78rem;
+        line-height: 1.5;
+      }
+
+      /* Intercalar Sem Stutter */
+      #intercalar-natureza {
+        background-attachment: scroll !important;
+        padding: 3.2rem 1.2rem;
+        min-height: 260px;
+      }
+      .intercalar-content h2 {
+        font-size: clamp(1.65rem, 5.5vw, 2.2rem);
+        margin-bottom: 1rem;
+      }
+      .intercalar-content p {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Mapa & Pins no Mobile */
+      .mapa-visual {
+        height: 280px;
+        min-height: 260px;
+      }
+      .pin-circle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+      }
+      .mapa-details-panel {
+        padding: 1.8rem 1.3rem;
+      }
+      .detail-title {
+        font-size: 1.55rem;
+        margin-bottom: 0.8rem;
+      }
+      .detail-body {
+        font-size: 0.84rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+      .detail-photo-mini {
+        max-height: 180px;
+        margin-bottom: 1.4rem;
+      }
+      #det-link {
+        width: 100%;
+        text-align: center;
+        min-height: 46px;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Reservar & Formulário Mobile */
+      #reservar {
+        padding: 3.2rem 0;
+      }
+      .reservar-split {
+        grid-template-columns: 1fr;
+        gap: 2.8rem;
+      }
+      .reservar-text-col h2 {
+        font-size: clamp(1.8rem, 5.5vw, 2.4rem);
+        margin-bottom: 1rem;
+      }
+      .reservar-intro {
+        font-size: 0.88rem;
+        line-height: 1.75;
+        margin-bottom: 1.8rem;
+      }
+      .info-bloco-reserva {
+        padding: 1.4rem 1.2rem;
+        margin-bottom: 1.8rem;
+      }
+      .booking-card {
+        padding: 2rem 1.3rem;
+      }
+      .booking-card-head {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.2rem;
+      }
+      .booking-card-head h3 {
+        font-size: 1.55rem;
+      }
+      .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+      .form-control {
+        font-size: 16px !important; /* Previne auto-zoom inoportuno no iOS Safari */
+        min-height: 48px;
+        padding: 0.75rem 0.95rem;
+      }
+      textarea.form-control {
+        min-height: 80px;
+      }
+      .booking-submit-btn {
+        min-height: 50px;
+        font-size: 0.76rem;
+      }
+
+      /* Localização Mobile */
+      #localizacao {
+        padding: 3rem 0;
+      }
+      .loc-grid {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+      }
+      .loc-info h2 {
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+      }
+      .loc-card-morada {
+        padding: 1.4rem 1.2rem;
+        margin-top: 1.4rem;
+      }
+      .loc-map-frame {
+        aspect-ratio: 16/10;
+        height: 260px;
+      }
+
+      /* Rodapé Mobile */
+      footer {
+        padding: 4rem 0 2rem;
+      }
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+        margin-bottom: 3rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+      }
+      .footer-legal-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+
+      /* WhatsApp Flutuante Mobile */
+      .whatsapp-float-btn {
+        width: 48px;
+        height: 48px;
+        bottom: max(1.2rem, env(safe-area-inset-bottom));
+        right: 1.2rem;
+      }
+      .whatsapp-float-btn svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    /* 4. SMARTPHONES ULTRA-COMPACTOS (<= 480px) */
+    @media (max-width: 480px) {
+      html {
+        font-size: 14px;
+      }
+
+      .container {
+        width: 93%;
+      }
+
+      .brand-title {
+        font-size: 1.02rem;
+      }
+      .brand-subtitle {
+        font-size: 0.48rem;
+      }
+
+      .hero-headline {
+        font-size: 1.95rem;
+      }
+      .hero-narrative {
+        font-size: 0.88rem;
+      }
+
+      .highlights-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+      }
+      .hl-item {
+        padding: 0.75rem 0.65rem;
+      }
+      .hl-num {
+        font-size: 1.6rem;
+      }
+      .hl-title {
+        font-size: 0.68rem;
+      }
+      .hl-desc {
+        font-size: 0.62rem;
+      }
+
+      .narrativa-m-tab {
+        padding: 0.65rem 0.6rem;
+        font-size: 0.68rem;
+      }
+      .cm-tab {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.68rem;
+      }
+
+      .acc-collapsed-view {
+        height: 70px;
+        padding: 0.8rem 1rem;
+      }
+      .acc-col-num {
+        font-size: 1.55rem;
+      }
+      .acc-col-title {
+        font-size: 0.92rem;
+      }
+      .acc-info-side {
+        padding: 1.6rem 1.1rem;
+      }
+      .acc-title {
+        font-size: 1.45rem;
+      }
+
+      .mapa-visual {
+        height: 260px;
+        min-height: 240px;
+      }
+      .mapa-details-panel {
+        padding: 1.5rem 1.1rem;
+      }
+
+      .booking-card {
+        padding: 1.6rem 1.1rem;
+      }
+
+      .loc-card-morada {
+        padding: 1.2rem 1rem;
+      }
+      .loc-map-frame {
+        height: 230px;
+      }
+
+      .footer-legal-links {
+        flex-direction: column;
+        gap: 0.7rem;
+      }
     }
   </style>
 </head>
@@ -2288,6 +2892,7 @@
 
   <!-- Menu Mobile -->
   <div class="mobile-drawer" id="mobile-menu">
+    <button type="button" class="mobile-drawer-close" onclick="fecharMenuMobile()" aria-label="Fechar menu">✕</button>
     <a href="#narrativa-carrossel" onclick="fecharMenuMobile()" data-pt="História & Lugar" data-en="Heritage & Place">História & Lugar</a>
     <a href="#as-casas" onclick="fecharMenuMobile()" data-pt="As Casas" data-en="The Houses">As Casas</a>
     <a href="#o-que-fazer" onclick="fecharMenuMobile()" data-pt="O que Fazer" data-en="Things to Do">O que Fazer</a>
@@ -2379,6 +2984,16 @@
   <section id="narrativa-carrossel">
     <div class="container">
       
+      <!-- Comutador Mobile para os Slides Narrativos -->
+      <div class="narrativa-mobile-tabs" aria-label="Navegação da História">
+        <button type="button" class="narrativa-m-tab active" id="m-tab-0" onclick="irParaSlide(0)">
+          <span data-pt="02 — A História" data-en="02 — Heritage">02 — A História</span>
+        </button>
+        <button type="button" class="narrativa-m-tab" id="m-tab-1" onclick="irParaSlide(1)">
+          <span data-pt="01 — O Lugar" data-en="01 — The Place">01 — O Lugar</span>
+        </button>
+      </div>
+
       <!-- Contentor com Área de Conteúdo + Trilhos Laterais Verticais -->
       <div class="narrativa-stage-wrap reveal">
         
@@ -2440,6 +3055,13 @@
                   <span class="st-text" data-pt="Reabilitação cuidadosa preservando a traça original e a cal." data-en="Careful conservation restoring original architecture and traditional lime wash.">Reabilitação cuidadosa preservando a traça original e a cal.</span>
                 </div>
               </div>
+
+              <!-- Botão de Fluxo Mobile -->
+              <div class="narrativa-mobile-flow">
+                <button type="button" class="btn btn-secondary m-flow-btn" onclick="irParaSlide(1)">
+                  <span data-pt="Conhecer O Lugar →" data-en="Discover The Place →">Conhecer O Lugar →</span>
+                </button>
+              </div>
             </div>
 
           </div>
@@ -2477,6 +3099,13 @@
               </div>
 
               <a href="#as-casas" class="btn btn-primary" data-pt="Explorar as Casas" data-en="Explore the Houses">Explorar as Casas</a>
+
+              <!-- Botão de Fluxo Mobile -->
+              <div class="narrativa-mobile-flow">
+                <button type="button" class="btn btn-secondary m-flow-btn" onclick="irParaSlide(0)">
+                  <span data-pt="← Voltar para A História" data-en="← Back to Heritage">← Voltar para A História</span>
+                </button>
+              </div>
             </div>
 
           </div>
@@ -2511,6 +3140,19 @@
         <h2 data-pt="Treze refúgios singulares.<br>A mesma serenidade." data-en="Thirteen singular retreats.<br>The same serenity.">
           Treze refúgios singulares.<br>A mesma serenidade.
         </h2>
+      </div>
+
+      <!-- Comutador Mobile de Tipologias -->
+      <div class="casas-mobile-tabs" aria-label="Selecionar tipologia">
+        <button type="button" class="cm-tab is-active" id="cm-tab-0" onclick="ativarPainelCasa(0)">
+          <span data-pt="T0 Estúdio" data-en="T0 Studio">T0 Estúdio</span>
+        </button>
+        <button type="button" class="cm-tab" id="cm-tab-1" onclick="ativarPainelCasa(1)">
+          <span data-pt="T1 Independente" data-en="T1 One-Bedroom">T1 Independente</span>
+        </button>
+        <button type="button" class="cm-tab" id="cm-tab-2" onclick="ativarPainelCasa(2)">
+          <span data-pt="T2 Familiar" data-en="T2 Family">T2 Familiar</span>
+        </button>
       </div>
 
       <!-- ACORDEÃO HORIZONTAL QUE EXPANDE EM HOVER -->
@@ -2743,6 +3385,28 @@
         </div>
       </div>
       
+      <!-- Seletor Rápido de Atividades para Mobile / Tablet -->
+      <div class="mapa-quick-selector" aria-label="Selecionar ponto no mapa">
+        <button type="button" class="mq-pill active" onclick="selecionarPin(0)" id="mq-0">
+          <span class="mq-emoji">🏡</span> <span data-pt="Casas da Piedade" data-en="Casas da Piedade">Casas da Piedade</span>
+        </button>
+        <button type="button" class="mq-pill" onclick="selecionarPin(1)" id="mq-1">
+          <span class="mq-emoji">🐴</span> <span data-pt="Quinta da Brôa" data-en="Quinta da Brôa">Quinta da Brôa</span>
+        </button>
+        <button type="button" class="mq-pill" onclick="selecionarPin(2)" id="mq-2">
+          <span class="mq-emoji">📖</span> <span data-pt="Fundação Saramago" data-en="Saramago Foundation">Fundação Saramago</span>
+        </button>
+        <button type="button" class="mq-pill" onclick="selecionarPin(3)" id="mq-3">
+          <span class="mq-emoji">🚴</span> <span data-pt="Trilhos do Tejo" data-en="Tagus Trails">Trilhos do Tejo</span>
+        </button>
+        <button type="button" class="mq-pill" onclick="selecionarPin(4)" id="mq-4">
+          <span class="mq-emoji">🍷</span> <span data-pt="Gastronomia & Vila" data-en="Dining & Village">Gastronomia & Vila</span>
+        </button>
+        <button type="button" class="mq-pill" onclick="selecionarPin(5)" id="mq-5">
+          <span class="mq-emoji">🦆</span> <span data-pt="Paul do Boquilobo" data-en="Paul do Boquilobo">Paul do Boquilobo</span>
+        </button>
+      </div>
+
       <!-- Contentor do Mapa Interativo com Pins -->
       <div class="mapa-interativo-container reveal delay-1">
         
@@ -2994,6 +3658,9 @@
               2150-028 Azinhaga · Golegã<br />
               Santarém, Portugal
             </address>
+            <a href="https://maps.google.com/?q=Estrada+Real+n.º+1+2150-028+Azinhaga+Golegã" target="_blank" rel="noopener noreferrer" class="loc-maps-link" data-pt="Abrir no Google Maps ↗" data-en="Open in Google Maps ↗">
+              Abrir no Google Maps ↗
+            </a>
           </div>
         </div>
 
@@ -3107,6 +3774,11 @@
         s.classList.toggle('active', idx === index);
       });
 
+      // Sincronizar abas mobile da narrativa
+      document.querySelectorAll('.narrativa-m-tab').forEach((tab, idx) => {
+        tab.classList.toggle('active', idx === index);
+      });
+
       // No Slide 0 (História), o botão fica do lado direito para avançar para "O Lugar"
       // No Slide 1 (Lugar), o botão fica do lado contrário (esquerda) para voltar para trás para "A História"
       const railRight = document.getElementById('rail-right');
@@ -3152,6 +3824,11 @@
       panels.forEach((p, idx) => {
         p.classList.toggle('is-active', idx === index);
       });
+
+      // Sincronizar abas mobile das casas
+      document.querySelectorAll('.cm-tab').forEach((tab, idx) => {
+        tab.classList.toggle('is-active', idx === index);
+      });
     }
 
     function desativarPaineisCasas() {
@@ -3169,23 +3846,32 @@
       const accContainer = document.querySelector('.casas-horizontal-accordion');
       let leaveTimeout = null;
 
+      // No mobile / tablet, inicializa a primeira casa aberta para visualização imediata
+      if (window.innerWidth <= 960) {
+        ativarPainelCasa(0);
+      }
+
       accPanels.forEach((panel, idx) => {
         panel.addEventListener('mouseenter', () => {
-          if (leaveTimeout) {
-            clearTimeout(leaveTimeout);
-            leaveTimeout = null;
+          if (window.innerWidth > 960) {
+            if (leaveTimeout) {
+              clearTimeout(leaveTimeout);
+              leaveTimeout = null;
+            }
+            ativarPainelCasa(idx);
           }
-          ativarPainelCasa(idx);
         });
       });
 
       if (accContainer) {
         accContainer.addEventListener('mouseleave', () => {
           if (leaveTimeout) clearTimeout(leaveTimeout);
-          // Amortecimento de 120ms para transição entre cartões sem solavancos
-          leaveTimeout = setTimeout(() => {
-            desativarPaineisCasas();
-          }, 120);
+          // Amortecimento de 120ms para transição entre cartões sem solavancos (apenas em desktop)
+          if (window.innerWidth > 960) {
+            leaveTimeout = setTimeout(() => {
+              desativarPaineisCasas();
+            }, 120);
+          }
         });
 
         accContainer.addEventListener('mouseenter', () => {
@@ -3308,6 +3994,11 @@
       const pinAtivo = document.getElementById(`pin-${index}`);
       if (pinAtivo) pinAtivo.classList.add('selected');
 
+      // Sincronizar pills do seletor rápido no mobile
+      document.querySelectorAll('.mq-pill').forEach((pill, idx) => {
+        pill.classList.toggle('active', idx === index);
+      });
+
       const item = atividadesData[index];
       if (!item) return;
 
@@ -3418,17 +4109,19 @@
       }
     }, { passive: true });
 
-    // 7. MENU MOBILE
+    // 7. MENU MOBILE COM ANIMAÇÃO "X"
     const menuBtn = document.getElementById('menu-btn');
     const mobileDrawer = document.getElementById('mobile-menu');
 
     menuBtn.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('open');
-      document.body.style.overflow = mobileDrawer.classList.contains('open') ? 'hidden' : '';
+      const isOpen = mobileDrawer.classList.toggle('open');
+      menuBtn.classList.toggle('is-active', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     function fecharMenuMobile() {
       mobileDrawer.classList.remove('open');
+      menuBtn.classList.remove('is-active');
       document.body.style.overflow = '';
     }
 
