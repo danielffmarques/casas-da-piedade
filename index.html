@@ -72,6 +72,16 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* REQUISITO: Apenas 2 Tipos de Letra (Prompt Inicial: Cormorant Garamond para Títulos | Manrope para Body/Botões) */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+    }
+
+    p, span, li, a, label, input, select, textarea {
+      font-family: var(--font-sans);
+    }
+
     img {
       display: block;
       width: 100%;
@@ -85,8 +95,8 @@
       transition: color var(--trans-suave);
     }
 
-    button {
-      font-family: inherit;
+    button, .btn {
+      font-family: var(--font-sans);
       cursor: pointer;
       border: none;
       background: none;
@@ -897,11 +907,11 @@
     }
 
     .slide-quote p {
-      font-family: var(--font-serif);
-      font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+      font-family: var(--font-sans);
+      font-size: clamp(0.82rem, 1vw, 0.92rem);
       font-style: italic;
       color: var(--verde-profundo);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .slide-features {
@@ -948,10 +958,11 @@
     }
 
     .st-date {
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
       color: var(--terracota);
-      font-weight: 500;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
     .st-text {
@@ -1949,10 +1960,10 @@
     }
 
     .faq-q-text {
-      font-family: var(--font-serif);
-      font-size: 1.22rem;
-      font-weight: 400;
-      line-height: 1.35;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.45;
       letter-spacing: -0.01em;
     }
 
@@ -2211,13 +2222,12 @@
     }
 
     .footer-col h5 {
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
       color: var(--areia);
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.2rem;
     }
 
     .footer-links {
